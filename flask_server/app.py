@@ -48,7 +48,6 @@ def index():
     """
     Main page
     """
-    print(type(render_template('index.html')))
     return render_template('index.html')
 
 
@@ -69,7 +68,6 @@ def predict():
         result = "This image is " + str(probability) + " percent Fire"
 
         return jsonify(result=result)
-
     return None
 
 
