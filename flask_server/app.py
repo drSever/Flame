@@ -1,9 +1,16 @@
+# Flask
 from flask import Flask, request, render_template, jsonify
 
+# TensorFlow
 import tensorflow as tf
 from tensorflow import keras
 
-from util import base64_to_pil
+# Pillow
+from io import BytesIO
+from PIL import Image
+
+import re
+import base64
 
 # Declare a flask app
 app = Flask(__name__)
@@ -12,6 +19,15 @@ MODEL_PATH = 'models/converted_model.tflite'
 
 with open(MODEL_PATH, 'rb') as fid:
     tflite_model = fid.read()
+
+
+def base64_to_pil(img_base64):
+    """
+    Convert base64 image data to PIL image
+    """
+    image_data = re.sub('^data:image/.+;base64,', '', img_base64)
+    pil_image = Image.open(BytesIO(base64.b64decode(image_data)))
+    return pil_image
 
 
 def model_predict(img, model):
@@ -48,6 +64,7 @@ def index():
     """
     Main page
     """
+    print(type(render_template('index.html')))
     return render_template('index.html')
 
 
@@ -68,6 +85,7 @@ def predict():
         result = "This image is " + str(probability) + " percent Fire"
 
         return jsonify(result=result)
+
     return None
 
 
