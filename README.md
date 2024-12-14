@@ -3,7 +3,7 @@
 **Авторы:**  
 - Агапов Константин (Тимлид) ([AgapovKS](https://github.com/AgapovKS))  
 - Фадеичев Даниил ([DaniilFad](https://github.com/DaniilFad))  
-- Баландина Маргарита ([alex-smirnov](https://github.com/SuperMBA))
+- Баландина Маргарита ([SuperMBA](https://github.com/SuperMBA))
 - Вячин Александр ([bababasbebebe](https://github.com/bababasbebebe))
 - Зинкин Сергей ([zinkin-s](https://github.com/zinkin-s))
 - Журавлев Александр ([drSever](https://github.com/drSever))
